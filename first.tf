@@ -1,17 +1,12 @@
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-      version = "~> 4.16"
-    }
-  }
-  required_version = ">= 1.2.0"
-}
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-1"  # Adjust your region
 }
-resource "aws_instance" "app_server" {
-  ami = "ami-0c614dee691cbbf37"
+
+resource "aws_instance" "my_instance" {
+  ami           = "ami-0c614dee691cbbf37"  # Replace with your preferred AMI
   instance_type = "t2.micro"
 
+  tags = {
+    Name = "MySpaceliftInstance"
+  }
 }
