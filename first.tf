@@ -1,5 +1,6 @@
 provider "aws" {
   region = "us-east-1"  # Adjust your region
+  profile = "default"
   assume_role {
     role_arn = "arn:aws:iam::992382549591:role/demo3.0"
   }
