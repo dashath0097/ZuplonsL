@@ -1,5 +1,6 @@
 provider "aws" {
   region = "us-east-1"  # Adjust your region
+  profile = "default"
 }
 
 resource "aws_instance" "my_instance" {
