@@ -11,7 +11,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "ap-south-1"  # Adjust your region
+  region = "us-east-1"  # Adjust your region
 }
 
 resource "aws_ecs_cluster" "example" {
@@ -24,7 +24,7 @@ resource "aws_ecs_task_definition" "example" {
   network_mode             = "awsvpc"
   cpu                      = "256"
   memory                   = "512"
-  execution_role_arn       = "arn:aws:iam::992382549591:role/ecsTaskExecutionRoleAvinash"  # Replace with your ECS execution role ARN
+  execution_role_arn       = "arn:aws:iam::992382549591:role/dashathECS1"  # Replace with your ECS execution role ARN
 
   container_definitions = jsonencode([{
     name      = "example-container"
@@ -38,10 +38,10 @@ resource "aws_ecs_task_definition" "example" {
 }
 
 resource "aws_lb_target_group" "example" {
-  name     = "Avitg1"
+  name     = "Dashathzuplonwaf"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = "vpc-0b25f7ef0f18ee5ef"  # Replace with your VPC ID
+  vpc_id   = "vpc-03a8dcf645971c427"  # Replace with your VPC ID
   target_type = "ip"  # Ensure this is set to 'ip' for Fargate
 
   health_check {
@@ -59,8 +59,8 @@ resource "aws_ecs_service" "example" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    subnets          = ["subnet-05850df941d39044a"]  # Replace with your subnet IDs
-    security_groups = ["sg-0d988d042b4944b58"]  # Replace with your security group ID
+    subnets          = ["subnet-0151691d92d049529"]  # Replace with your subnet IDs
+    security_groups = ["sg-01a941b17c0f0895e"]  # Replace with your security group ID
     assign_public_ip = true
   }
   # Ensure the GitHub App has proper access to the repository.
