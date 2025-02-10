@@ -15,7 +15,7 @@ provider "aws" {
 }
 
 resource "aws_ecs_cluster" "example" {
-  name = "example-cluster"
+  name = "dashath"
 }
 
 resource "aws_ecs_task_definition" "example" {
